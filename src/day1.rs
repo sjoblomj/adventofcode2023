@@ -3,11 +3,10 @@ use std::io::BufReader;
 use std::io::prelude::*;
 
 pub fn day1() -> std::io::Result<()> {
-    let file = File::open("src/input1.txt").expect("Unable to open file");
-    let mut buf_reader = BufReader::new(file);
-    let mut contents = String::new();
-    buf_reader.read_to_string(&mut contents)?;
-    part("one", &contents); // 55002
+    let content = std::fs::read_to_string("inputs/input1.txt")
+        .expect("Unable to open file");
+
+    part("one", &content); // 55002
     Ok(())
 }
 
